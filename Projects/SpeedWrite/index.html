@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Speed Write</title>
+    <script
+            src="https://kit.fontawesome.com/5daa8eb347.js"
+            crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <div class="main-container">
+        <div class="start">
+
+            <div class="result">
+                <h2> <a>24</a><span title="Words Per Minute (Corrects / minutes)">WPM</span></h2>
+                <p><span class="correct cr">24</span>|<span class="past-wrong wr">10</span></p>
+            </div>
+
+            <button class="start-but">Start</button>
+            <form>
+                <input type="radio" id="Min1" name="time" value="1" checked>
+                <label for="Min1">1 Min</label>
+                <input type="radio" id="Min130" name="time" value="1.5">
+                <label for="Min130">1 : 30 Min</label>
+                <input type="radio" id="Min2" name="time" value="2">
+                <label for="Min2">2 Min</label>
+            </form>
+
+        </div>
+        <div class="cont">
+            <div class="word-display">
+
+            </div>
+            <div class="form"><input class="form-input"></div>
+            <div class="time">
+                <span class="time-screen"><div class="time-min">0</div> : <div class="time-sec">01</div></span>
+                <span class="reset"><button><i class="fa-solid fa-repeat"></i></button></span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

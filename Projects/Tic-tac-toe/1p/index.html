@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="../favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>1player Tic tac toe</title>
+
+    <script
+            src="https://kit.fontawesome.com/5daa8eb347.js"
+            crossorigin="anonymous"
+    ></script>
+
+</head>
+<body>
+    <div class="container">
+
+
+        <div class="return"><i onclick="window.location.href='../main.html';" class="fa-solid fa-arrow-left"></i></div>
+        <div class="win-popup">
+            <div class="win-status"></div>
+
+            <div class="buttons-form">
+
+                <button onclick="restartBut()" class="restart">Restart</button>
+            </div>
+        </div>
+        <div class="wins"></div>
+        <hr class="hr1">
+        <hr class="hr2">
+
+
+
+        <div class="grid">
+            <div class="c1 cell"></div>
+            <div class="c2 cell"></div>
+            <div class="c3 cell"></div>
+            <div class="c4 cell"></div>
+            <div class="c5 cell"></div>
+            <div class="c6 cell"></div>
+            <div class="c7 cell"></div>
+            <div class="c8 cell"></div>
+            <div class="c9 cell"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;500&display=swap');
+
+:root{
+    --book-content : '🕮';
+    --inc-content : '?!';
+    --blnd-content : '??';
+    --brlnt-content : '!!';
+    --best-content : '⍟';
+    --grt-content : '!';
+
+    --book-background : '#a88865';
+    --inc-background : '#f7c045';
+    --blnd-background : '#ca3431';
+    --brlnt-background : '#1ca7a1';
+    --best-background : '#96bc4b';
+    --grt-background : '#1aa8a1';
+}
+
+
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: #8f8f8f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid{
+    background: transparent;
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-template-rows: repeat(3 , 1fr);
+    height: 90vmin;
+    width: 90vmin;
+}
+
+.cell{
+    font-family: 'Merienda' , Arial;
+    font-size: 10vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: .3vmin solid black;
+    cursor: pointer;
+    position: relative;
+    border-radius: 2vmin;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    height: 95%;
+    width: 95%;
+    background: #fff;
+    transition: filter .3s;
+}
+
+.cell:hover{
+    filter: brightness(0.7);
+}
+
+.return{
+    cursor: pointer;
+    position: absolute;
+    z-index: 1000;
+    font-size: 7vmin;
+    top: 0;
+    left: 0;
+    margin: 1vmin;
+    transition:transform .2s ease-in-out;
+}
+
+.return:hover{
+    transform: rotate(1turn);
+    color: #3e3e3e;
+}
+
+.wins{
+    display: none;
+    position: absolute;
+    z-index: 500;
+    height: 61vmin;
+    width: 61vmin;
+    /*border: .5vmin #ff0000 solid;*/
+}
+
+.hr1 {
+    display: none;
+    width: 85vmin;
+    height: .4vmin;
+    background: red;
+    transform: rotate(45deg);
+    position: absolute;
+    z-index: 500;
+    outline: none;
+    border: none;
+}
+
+.hr2{
+    display: none;
+    width: 85vmin;
+    height: .4vmin;
+    background: red;
+    transform: rotate(-45deg);
+    position: absolute;
+    z-index: 500;
+    outline: none;
+    border: none;
+}
+.md{
+     display: none;
+     width: 65vmin;
+     height: .4vmin;
+     background: red;
+     position: absolute;
+     z-index: 1000;
+     outline: none;
+     border: none;
+ }
+
+.mu{
+    display: none;
+    width: 65vmin;
+    height: .4vmin;
+    transform: rotate(90deg);
+    background: red;
+    position: absolute;
+    z-index: 1000;
+    outline: none;
+    border: none;
+}
+.containerM{
+    font-family: 'Merienda' , Arial;
+    background: #909090;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.p{
+    font-family: 'Merienda' , Arial;
+    cursor: pointer;
+    font-size: 3vmin;
+    border-radius: 1vmin;
+    margin: 5vmin;
+    background: #6ebfff;
+    width: 30vmin;
+    border: none;
+    height: 10vmin;
+    box-shadow: 0 0 1.5vmin 0 rgba(0, 0, 0, 0.5);
+    transition: transform .2s ease-in-out, filter .2s linear;
+}
+
+.p:hover{
+    transform: scale(1.1);
+    filter: brightness(.7);
+}
+
+.ads{
+    position: absolute;
+    background: black;
+    width: 100vmin;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 10vmin;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.adddown{
+    bottom: 0;
+}
+
+
+.ads img {
+    position: absolute;
+    width: 100vmin;
+    height: 10vmin;
+}
+
+.ads button{
+    right: 0;
+    border: none;
+    border-radius: 50%;
+    background: #00b999;
+    cursor: pointer;
+    color: white;
+    width: 3vmin;
+    height: 3vmin;
+    position: absolute;
+    z-index: 1000;
+    transition: transform .4s ease-in-out , filter .3s linear;
+}
+
+.ads button:hover{
+    filter: brightness(0.7);
+    transform: rotate(1turn) scale(1.1);
+}
+
+.win-popup{
+    box-shadow: 0 0 .5vmin .5vmin rgba(0, 0, 0, 0.38);
+    font-family: 'Merienda' , Arial;
+    position: absolute;
+    width: 50vmin;
+    height: 30vmin;
+    border-radius: 2.5vmin;
+    display: none;
+    background: #05897e;
+    z-index: 1000;
+    animation: popup .2s linear;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.win-popup .buttons-form{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.win-popup button{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 3vmin;
+    font-family: inherit;
+    width: 10vmin;
+    height: 4vmin;
+    border: none;
+    background: #6ebfff;
+    border-radius: 1vmin;
+    cursor : pointer;
+    transition:filter .2s linear , transform .2s ease-in-out;
+    font-size: 2vmin;
+
+}
+
+.win-popup .win-status{
+    font-size: 2.5vmin;
+    margin: 1vmin;
+}
+
+.win-popup button:hover{
+    filter: brightness(.7);
+    transform: scale(1.2);
+}
+
+@keyframes popup {
+    0%{
+        width: 0;
+        height: 0;
+    }
+    50%{
+        width: 25vmin;
+        height: 15vmin;
+    }
+    100%{
+        width: 50vmin;
+        height: 30vmin;
+    }
+}
+.icons{
+    z-index: 10000;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background: rgba(165, 165, 165, 0);
+}
+p {
+    position: absolute;
+    font-family: Arial;
+    font-weight: bold;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    color:white;
+    border-radius: 50%;
+    background: silver;
+}
+
+.brilliant{
+    display: none;
+    z-index: 1000;
+}
+
+
+
+
+
+
+.next-pre{
+    width: 170vmin;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vmin;
+    z-index: 1000;
+    position: absolute;
+}
+
+.next-pre button {
+    font-size: 3vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10vmin;
+    height: 5vmin;
+    cursor: pointer;
+    background: #212121;
+    color: white;
+    border: none;
+    border-radius: .5vmin;
+    transition: .3s;
+}
+
+.next-pre button:hover{
+    transform: scale(1.1);
+    filter: contrast(70%);
+}

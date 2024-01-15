@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    /*outline: 1px red solid;*/
+}
+body{
+    background: #212121;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    justify-content: space-between;
+    min-height: 100vh;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #d2d2d2;
+}
+.face-cont{
+    font-size: 15vmin;
+    height: 30vmin;
+    width: 100%;
+    border-bottom:1vmin black solid ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.face{
+    border-radius: 50%;
+    height: 17vmin;
+    width: 17vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: .3vmin black solid;
+    overflow: hidden;
+}
+.face i {
+    border-radius: 50%;
+    background: #E8BEAC;
+}
+.all-inputs{
+    height: 70vmin;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.email-cont{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+}
+.email,.password{
+    text-align: center;
+    transition: .3s;
+    height: 30px;
+    width: 70%;
+}
+.email:focus,.password:focus{
+    background: #bdbdbd;
+    border: none;
+    outline: none;
+}
+
+.email-text,.pass-text{
+    position: relative;
+    transform: translateY(24px);
+}
+
+.pass-cont{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+}
+.sign-in-cont{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+.sign-in{
+    margin: 10px;
+    cursor: pointer;
+    font-size: 23px;
+    width: 40%;
+    height: 40px;
+    border: none;
+    background: #6ebfff;
+    border-radius: 1vmin;
+    transition: .3s;
+}
+.sign-in:hover{
+    background: #1973bb;
+}
+.sign-in-cont p{
+    color: blue;
+    cursor: pointer;
+}
+.email-text span{
+    transition: .3s;
+    position: relative;
+}
+.pass-text span{
+    transition: .3s;
+    position: relative;
+}
