@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+.back-cont{
+    background: #090909;
+    color: #00ff51;
+    min-width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+.column{
+    color: #00ff51;
+    font-size: 1.3vmin;
+    width: 1.3vmin;
+    min-height: 100vh;
+    /*border: 1px white solid;*/
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.back-cont .text{
+    transition: .5s;
+}

@@ -1,0 +1,384 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+.cont{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #000000;
+}
+.nav{
+    color: white;
+    font-size: 22px;
+    padding: 33px;
+    background-color: #282828;
+    display: flex;
+    min-width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 15vmin;
+}
+
+.log{
+    display: flex;
+    align-items: center;    
+}
+.login , .signin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 40px;
+    background: #810CA8;
+    margin: 11px;
+    border-radius: 11px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    transition: .4s;
+}
+
+.login:hover , .signin:hover{
+    transform: scale(1.2);
+    filter: brightness(.7);
+}
+
+
+.signin{
+    background: black;
+}
+
+.play{
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+
+.start button{
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    border: none;
+    background: #810CA8;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 20px;
+    transition: .4s;
+}
+.start button:hover{
+    transform: scale(1.2);
+}
+
+
+
+.records{
+    min-width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.list{
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+}
+
+.record{
+    border: 2px black solid;
+    margin: 5px 0;
+    display: flex;
+    height: 50px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #282828;;
+    color: white;
+}
+
+.points{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 30px;
+    background: #810CA8;
+    margin: 11px;
+    border-radius: 11px;
+}
+.name{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.no{
+    font-size: 30px;
+}
+
+.img{
+    cursor: pointer;
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    transition: .4s;
+}
+.img:hover ,   .img-profile:hover , .imgs:hover{
+    transform: scale(1.1);
+}
+
+
+
+.cont-login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    height: 100vh;
+
+}
+
+.contai-login{
+    background: #282828;
+    height: 90vmin;
+    border-radius: 20px;
+    width: 60vmin; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form{
+    border-radius: 20px;
+    color: white;
+    background: #282828;
+    height: 70vmin;
+    width: 50vmin; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inputs  *{
+    margin: 1vmin;
+}
+
+.input{
+    color: white;
+    background: transparent;
+    width: 35vmin;
+    height: 3vmin;
+    border-radius: 0;
+    border-color: transparent transparent #000 transparent;
+    border-style: none none solid none;
+    border-width: 0 0 1px 0;
+
+}
+
+.input:focus{
+    outline: none;
+}
+
+
+.circle{
+    font-size: 4vmin;
+    width: 10vmin;
+    height: 10vmin;
+    background: #810CA8;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+button{
+    cursor: pointer;
+    background: #810CA8;
+    width: 15vmin;
+    height: 5vmin;
+    border-radius: 5vmin;
+    border: none;
+    color: white;
+    transition: .4s;
+}
+button:hover{
+    transform: scale(1.2);
+    filter: brightness(.8);
+}
+
+.buttons p {
+    margin-top: 2vmin;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.cracc{
+    text-decoration: none;
+    color: #810CA8;
+
+}
+
+
+.g{
+    transform: scale(0.1);
+}
+
+.swal2-image{
+    border-radius: 50%;
+}
+
+.swal2-styled.swal2-confirm{
+    background-color: #810CA8 !important;
+    transition: .4s;
+    border: none;
+    outline: none;
+}
+
+.swal2-container.swal2-center>.swal2-popup {
+
+    background: #282828;
+    
+    color: white;
+
+}
+
+
+.swal2-html-container{
+    font-size: 30px !important ;
+    background: #810CA8;
+    border-radius: 20px;
+
+}
+
+
+body::-webkit-scrollbar {
+    width: 12px;               
+  }
+  body::-webkit-scrollbar-track {
+    background: #000;        
+  }
+  body::-webkit-scrollbar-thumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #810CA8;    
+    border-radius: 20px;       
+  }
+
+
+  .img-profile{
+    margin-right: 10px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: .4s;
+
+  }
+
+
+.logout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    background: #000;
+    width: 150px;
+    height: 50px;
+    font-size: 30px;
+    border-radius: 10px;
+    transition: .4s;
+}
+
+.logout:hover{
+    transform: scale(1.2);
+}
+
+.avatar-popup{
+    border-radius: 10px;
+    box-shadow: #3b3b3b 0 0 5px 5px ;
+    place-content: center;
+    padding: 0;
+    margin: 0;
+    width: 80vmin;
+    display: none;
+    grid-template-columns: auto auto auto auto auto;
+    height: 60vmin;
+    background: #282828;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+.imgs{
+    cursor: pointer;
+    border: 2px white solid;
+    margin-right: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: .4s;
+}
+.avatar-upload{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#file{
+    display: none;
+}
+
+.label-avatar{
+    background: #810CA8;
+    color: white;
+    width: 80px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .4s; 
+}
+
+.label-avatar:hover{
+    transform: scale(1.1);
+}
+
+.img1{
+    cursor: pointer;
+    border: 2px white solid;
+    margin-right: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: .4s;
+}

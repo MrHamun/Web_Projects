@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>sign-up</title>
+         <!-- Cool Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+        <!-- Our stylesheet -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" ></script>
+        <script
+        src="https://kit.fontawesome.com/5daa8eb347.js"
+        crossorigin="anonymous"
+      ></script>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+        <div class="cont-login">
+
+
+            <div class="contai-login">
+            <div class="form">
+            
+                <div class="circle">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+            
+                <div class="inputs">
+                    <p>name:</p>
+                    <input class="input namei" type="text"  required>
+                <p>email:</p>
+                <input class="input emaili"  type="email" required>
+            
+            
+                <p>password:</p>
+                <input class="input passi" type="password" required> 
+
+                <p>choose your avatar:</p>
+                <div class="avatar-cont">
+                    <div class="avatar-circle"><img alt="?" class="img1" src="../imgs/b.jpg"></div>
+
+                    <div class="avatar-popup">
+                        <div class="avatar-op"><img class="imgs" src="../imgs/a.jpg"></div>
+                        <div class="avatar-op"><img class="imgs" src="../imgs/b.jpg"></div>
+                        <div class="avatar-op"><img class="imgs" src="../imgs/c.jpg"></div>
+                        <div class="avatar-op"><img class="imgs" src="../imgs/d.jpg"></div>
+                        <div class="avatar-op"><img class="imgs" src="../imgs/e.jpg"></div>
+                        <div class="avatar-op"><img class="imgs" src="../imgs/f.jpg"></div>
+                        <div class="avatar-op"><img class="imgs" src="../imgs/g.jpg"></div>
+                        <div class="avatar-op"><img class="imgs" src="../imgs/h.jpg"></div>
+                        <div class="avatar-op"><img class="imgs" src="../imgs/i.jpg"></div>
+                        <div class="avatar-op"><img class="imgs" src="../imgs/j.jpg"></div>
+
+                    </div>
+
+                </div>
+             
+            </div>
+            
+            <div class="buttons">
+                <button onclick="register()">sign-up</button>
+                <p>already have an account ? <a class="cracc" href="signin.html">login</a> </p>
+            
+            </div>
+            
+            
+            </div>
+            </div>
+            </div>
+            </div>
+
+    </body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+    <!-- Our script must be loaded after firebase references -->
+    <script src="script.js"></script>
+    <script src="scripts.js"></script>
+    <script>
+    
+        const openAvatar = document.querySelector('.img1');
+        const popupAvatar = document.querySelector('.avatar-popup')
+        
+        let acc = 0
+        let srcAvatar = "../imgs/b.jpg"
+        
+        
+        openAvatar.onclick = function(){
+          console.log('a')
+          popupAvatar.style.display = 'grid';
+        }
+        
+        addEventListener('click' , function(e){
+            if(e.target.classList.contains('imgs')){
+                srcAvatar =  e.target.getAttribute('src');
+                popupAvatar.style.display = 'none';
+                openAvatar.setAttribute('src' , srcAvatar)
+        
+            }
+        })</script>
+
+</html>

@@ -1,0 +1,92 @@
+:root{
+    --mixed1 : 'red';
+    --mixed2 : 'blue';
+}
+
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    min-height: 100vh;
+    background: #dcdcdc;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.mixing{
+    background: #ffffff;
+    width: 80%;
+    height: 45vmin;
+    margin: 10vmin;
+    border: .1vmin solid #5d5d5d;
+    border-radius: 2vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.c{
+    position: relative;
+    width: 25vmin;
+    height: 25vmin;
+
+}
+
+.color1{
+    background: #00b23c;
+    left: -20vmin;
+}
+.color2{
+    background: #00b23c;
+    left: 20vmin;
+}
+.color3{
+    background-color: color-mix(in srgb , #0062ff, #ffe000);
+    display: none;
+}
+
+.inputs{
+    background: #ffffff;
+    width: 80%;
+    height: 20vmin;
+    margin: 10vmin;
+    border: .1vmin solid #5d5d5d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2vmin;
+}
+
+.inputs button{
+    width: 25vmin;
+    height: 10vmin;
+    background: #c21ae8;
+    color: white;
+    font-size: 5vmin;
+    border-radius: 1vmin;
+    border: none;
+    cursor: pointer;
+    margin: 0 10vmin;
+    transition:filter .4s , transform .4s;
+}
+.inputs button:hover{
+    filter: brightness(0.7);
+    transform: scale(1.1);
+}
+
+.color-pick{
+    width: 10vmin;
+    height: 10vmin;
+    margin: 0 10vmin;
+    cursor: pointer;
+    border-radius: 1vmin;
+    transition:filter .4s , transform .4s;
+    border: none;
+}
+
+.color-pick:hover{
+    filter: brightness(0.7);
+    transform: scale(1.1);
+}

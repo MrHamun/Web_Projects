@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>sign-up</title>
+         <!-- Cool Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+        <!-- Our stylesheet -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" ></script>
+        <script
+        src="https://kit.fontawesome.com/5daa8eb347.js"
+        crossorigin="anonymous"
+      ></script>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+        <div class="cont-login">
+
+
+            <div class="contai-login">
+            <div class="form">
+            
+                <div class="circle">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+            
+                <div class="inputs">
+
+                <p>email:</p>
+                <input class="input emaili"  type="email" required>
+            
+            
+                <p>password:</p>
+                <input class="input passi" type="password" required> 
+             
+            </div>
+            
+            <div class="buttons">
+                <button onclick="login()">sign-in</button>
+                <p>don't have an account ? <a class="cracc" href="signup.html">sign-up</a> </p>
+            
+            </div>
+            
+            
+            </div>
+            </div>
+            </div>
+            </div>
+
+    </body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+    <!-- Our script must be loaded after firebase references -->
+    <script src="script.js"></script>
+
+
+</html>
