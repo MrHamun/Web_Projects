@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--  <link rel="stylesheet" href="style.css">-->
+    <meta charset="UTF-8">
+    <title>Clicker game</title>
+
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container{
+      background: #848484;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      text-align: center;
+    }
+    .clickPlace{
+      color: white;
+      font-size: 50px;
+    }
+    .clicker{
+      font-size: 150px;
+      cursor: pointer;
+      border: 3px black solid;
+      border-radius: 30px;
+      background: #6ebfff;
+      margin: 100px;
+      width: 300px;
+      height: 300px;
+      transition: .3s ;
+    }
+
+    .clicker:hover{
+      background: #1973bb;
+    }
+
+
+    .allCPS{
+      margin: 5px;
+      background: #424242;
+      color: white;
+      border: black 3px solid;
+    }
+    .clicks{
+      --fa-animation-duration: 0.1s;
+      background: #212121;
+    }
+
+    .upgradePlace{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .upgrade{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin: 50px;
+      border: 3px black solid;
+      width: 300px;
+      height: 300px;
+    }
+    .upgradeText{
+      font-size: 30px;
+    }
+    .upgradeBuy{
+      background: #6ebfff;
+      border: 1px black solid;
+      cursor: pointer;
+      width: 200px;
+      height: 50px;
+      margin-top: 30px;
+      transition: .3s;
+    }
+
+    .upgradeBuy:hover{
+      background: #1973bb;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="clickPlace">
+    <button class="clicker">+</button>
+    <div class="cps allCPS">  CPS  <span>00</span> </div>
+    <div class="cpc allCPS">  CPC  <span>01</span> </div>
+    <div class="clicks allCPS"> <span>00</span> </div>
+  </div>
+
+
+  <div class="upgradePlace">
+
+      <div class="upgrade CPC" data="100">
+        <p class="upgradeText">+5 CPC (-100 clicks)</p>
+        <button class="upgradeBuy" data = "5">Buy</button>
+      </div>
+    <div class="upgrade CPS" data="100">
+      <p class="upgradeText">+15 CPS (-500 clicks)</p>
+      <button class="upgradeBuy" data = "15">Buy</button>
+    </div>
+    <div class="upgrade CPS" data="1000">
+      <p class="upgradeText">+25 CPS (-1000 clicks)</p>
+      <button class="upgradeBuy" data = "25">Buy</button>
+    </div>
+    <div class="upgrade CPS" data="5000">
+      <p class="upgradeText">+250 CPS (-5000 clicks)</p>
+      <button class="upgradeBuy" data = "250">Buy</button>
+    </div>
+    <div class="upgrade CPS" data="10000">
+      <p class="upgradeText">+500 CPS (-10K clicks)</p>
+      <button class="upgradeBuy" data = "500">Buy</button>
+    </div>
+    <div class="upgrade CPS" data="50000">
+      <p class="upgradeText">+500 CPS (-50K clicks)</p>
+      <button class="upgradeBuy" data = "500">Buy</button>
+    </div>
+    <div class="upgrade CPC" data="120000">
+      <p class="upgradeText">+10K CPC (-120K clicks)</p>
+      <button class="upgradeBuy" data = "10000">Buy</button>
+    </div>
+    <div class="upgrade CPS" data="1000000">
+      <p class="upgradeText">+200K CPS (-1M clicks)</p>
+      <button class="upgradeBuy" data = "200000">Buy</button>
+    </div>
+    <div class="upgrade CPS" data="15000000">
+      <p class="upgradeText">+400K CPS (-15M clicks)</p>
+      <button class="upgradeBuy" data = "400000">Buy</button>
+    </div>
+    <div class="upgrade CPC" data="150000000">
+      <p class="upgradeText">+10M CPC (-150M clicks)</p>
+      <button class="upgradeBuy" data = "10000000">Buy</button>
+    </div>
+    <div class="upgrade CPS" data="1000000000">
+      <p class="upgradeText">+150M cps (-1B clicks)</p>
+      <button class="upgradeBuy" data = "150000000">Buy</button>
+    </div>
+    <div class="upgrade CPS" data="15000000000">
+      <p class="upgradeText">+500M cps (-15B clicks)</p>
+      <button class="upgradeBuy" data = "500000000">Buy</button>
+    </div>
+    <div class="upgrade CPS" data="200000000000">
+      <p class="upgradeText">+10B cps (-200B clicks)</p>
+      <button class="upgradeBuy" data = "10000000000">Buy</button>
+    </div>
+    <div class="upgrade CPS" data="1000000000000">
+      <p class="upgradeText">+10B cps (-1T clicks)</p>
+      <button class="upgradeBuy" data = "10000000000">Buy</button>
+    </div>
+    <div class="upgrade CPC" data="10000000000000">
+      <p class="upgradeText">+200B CPC (-10T clicks)</p>
+      <button class="upgradeBuy" data = "200000000000">Buy</button>
+    </div>
+    <div class="upgrade CPS" data="15000000000000">
+      <p class="upgradeText">+250B cps (-15T clicks)</p>
+      <button class="upgradeBuy" data = "250000000000">Buy</button>
+    </div>
+    <div class="upgrade CPS" data="50000000000000">
+      <p class="upgradeText">+5T cps (-50T clicks)</p>
+      <button class="upgradeBuy" data = "5000000000000">Buy</button>
+    </div>
+    <div class="upgrade CPS" data="500000000000000000">
+      <p class="upgradeText">+5Q cps (-500Q clicks)</p>
+      <button class="upgradeBuy" data = "5000000000000000">Buy</button>
+    </div>
+
+
+
+
+
+    </div>
+
+</div>
+
+
+
+
+<script>
+  const clicker = document.querySelector('.clicker');
+  const clicks = document.querySelector('.clicks');
+  const cpsCounter = document.querySelector('.cps span')
+  const cpcCounter = document.querySelector('.cpc span')
+
+  let click = 0
+  let cps = 0;
+  let cpc = 1;
+
+  setInterval(function (){
+    click += cps;
+    write()
+
+  },1000)
+
+  addEventListener('click',function (e){
+    if (e.target.classList.contains('clicker')){
+      click += cpc;
+      write();
+      clickAnimation(e.target);
+    }
+
+
+
+
+    else if (e.target.classList.contains('upgradeBuy')){
+      buy(e.target)
+      clickAnimation(e.target)
+    }
+  })
+
+
+
+
+
+
+  function write(){
+    if (click < 10){
+      clicks.innerHTML = `0${click}`
+    }else{
+      clicks.innerHTML = click
+    }
+  }
+
+  function clickAnimation(f){
+
+    f.style.transform = 'scale(150%)';
+    f.style.filter = 'brightness(0)';
+    setTimeout(function (){
+      f.style.filter = 'brightness(1)';
+      f.style.transform = 'scale(100%)'
+    },30)
+  }
+
+
+  function buy(p){
+    if (p.parentElement.getAttribute('data') < click) {
+
+      click -= Number(p.parentElement.getAttribute('data'));
+      write()
+
+      if (p.parentElement.classList.contains('CPC')) {
+        cpc += Number(p.getAttribute('data'))
+
+        if (cpc < 10) {
+          cpcCounter.innerHTML = `0${cpc}`
+        } else {
+          cpcCounter.innerHTML = cpc
+        }
+
+      } else if (p.parentElement.classList.contains('CPS')) {
+        cps += Number(p.getAttribute('data'))
+
+
+        if (cps < 10) {
+          cpsCounter.innerHTML = `0${cps}`
+        } else {
+          cpsCounter.innerHTML = cps
+        }
+
+      }
+    }else{
+      notEnough(p)
+    }
+  }
+
+
+  function notEnough(e){
+    e.parentElement.style.color = 'red';
+    setTimeout(function (){e.parentElement.style.color = 'black';},50)
+    setTimeout(function (){e.parentElement.style.color = 'red';},100)
+    setTimeout(function (){e.parentElement.style.color = 'black';},150)
+  }
+</script>
+
+<!--<script src="https://kit.fontawesome.com/21eb645108.js" crossorigin="anonymous"></script>-->
+<!--<script src="script.js"></script>-->
+</body>
+</html>

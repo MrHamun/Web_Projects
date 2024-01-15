@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+        *{
+            margin: 0;
+            border: 1px ;
+            box-sizing: border-box;
+        }
+        body{
+            background-image: linear-gradient(45deg,#000, #FFF,#000,#FFF,#000,#FFF,#000,#FFF,#000,#FFF);
+            background-size: 600%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            animation: body 20s infinite alternate;
+        }
+
+        @keyframes body {
+            0%{
+                background-position: left;
+            }
+            100%{
+                background-position: right;
+            }
+        }
+
+
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            height: 100vh;
+            width: 70%;
+            background: #929292;
+            box-shadow: 0 0 40px #000;
+        }
+        .form{
+            flex-wrap: wrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .first{
+            margin-left: 30px;
+        }
+        .num{
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            border-radius: 20px;
+            min-width: 20vmin;
+            height: 50px;
+        }
+
+        form{
+            gap: 20px;
+            font-size: 30px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button{
+            background-image: linear-gradient(45deg,#6ebfff,#6ebfff,#1973bb,#1973bb);
+            min-width: 20vmin;
+            height: 50px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: #fff;
+            cursor: pointer;
+            transition: 1s ;
+            background-size: 500%;
+            background-position: left;
+
+
+        }.button:hover{
+             background-position:right;
+         }
+
+        .name{
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+
+<!--    <link rel="stylesheet" href="style.css">-->
+    <meta charset="UTF-8">
+    <title>Auto Name</title>
+</head>
+<body>
+<div class="container">
+    <div class="form">
+        <input class="num" type="number" autofocus placeholder="num of letters">
+        <input class="num first" type="text" maxlength="1" autocapitalize="characters" placeholder="First letter">
+        <br>
+        <form>
+        </form>
+        <br>
+        <div class="button">ok</div>
+
+    </div>
+    <div class="name">
+    </div>
+</div>
+<!--<script src="script.js"></script>-->
+<script>
+    const input = document.querySelector('.num');
+    const first = document.querySelector('.first')
+    const submit = document.querySelector('.button');
+    const inputY = document.querySelector('#yes');
+    const inputN = document.querySelector('#no');
+    const form = document.querySelector('form');
+    const name = document.querySelector('.name')
+
+
+    const notSound = [ 'B' , 'C', 'D', 'F' , 'G', 'H', 'H', 'J' , 'K', 'L','M' , 'N' ,  'P', 'R' , 'S','V' , 'Y','Z' ]
+    const sound = ['A' ,'A' ,'E' ,'I' ,'O' ,'U']
+
+    let order;
+
+    function dis(){
+
+
+    }
+
+
+    setInterval(function (){dis()},100)
+
+    submit.onclick = function (){
+        if (first.value !== ''){
+
+            if (input.value !== '' && input.value > 0) {
+                ///////////
+
+                name.innerHTML = ''
+                const firstLetter = document.createElement('p');
+                name.appendChild(firstLetter);
+                firstLetter.innerHTML = first.value.toUpperCase()
+
+                ///////////
+
+                firstSoundFunction()
+
+                ///////////
+
+                for (let i = 0; i < input.value - 1; i++) {
+                    if (order === 1) {
+                        PSN()
+                        order = 0
+
+                    }else if (order === 0) {
+                        PS()
+                        order = 1
+                    }
+
+                    console.log(order)
+                }
+
+                //////////////
+            }
+
+
+
+
+        }else if (first.value === ''){
+            name.innerHTML = ''
+            order = Math.floor(Math.random() * 2)
+
+            for (let i = 0; i < input.value; i++) {
+
+                if (order === 1) {
+                    PSN()
+                    order = 0
+
+                }else if (order === 0) {
+                    PS()
+                    order = 1
+                }
+
+                console.log(order)
+            }
+        }
+    }
+
+
+
+
+
+
+    function PS(){
+        let P = document.createElement('p');
+        name.appendChild(P);
+        P.innerHTML = sound[Math.floor(Math.random() * sound.length)]
+        order = 0
+    }
+    function PSN(){
+        let P = document.createElement('p');
+        name.appendChild(P);
+        P.innerHTML = notSound[Math.floor(Math.random() * notSound.length)]
+        order = 1
+    }
+
+
+
+
+
+
+
+    function firstSoundFunction() {
+        if (first.value.toUpperCase() === 'A' || first.value.toUpperCase() === 'E' || first.value.toUpperCase() === 'O' || first.value.toUpperCase() === 'U' || first.value.toUpperCase() === 'I'){
+            order = 1
+        }else{
+            order = 0
+        }
+    }
+</script>
+</body>
+</html>

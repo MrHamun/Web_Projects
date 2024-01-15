@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="imgs/meowGPT-logo.png">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>meowGPT</title>
+
+    <script src="https://kit.fontawesome.com/21eb645108.js" crossorigin="anonymous"></script>
+    <script
+            src="https://kit.fontawesome.com/5daa8eb347.js"
+            crossorigin="anonymous"
+    ></script>
+
+<!--    <style>-->
+<!--        *{-->
+<!--            /*border: 1px red solid;*/-->
+<!--            /*padding: 1px;*/-->
+<!--            font-family: sans-serif;-->
+<!--            margin: 0;-->
+<!--            box-sizing: border-box;-->
+<!--        }-->
+<!--        .container{-->
+<!--            min-height: 100vh;-->
+<!--            color: #d9d9e3;-->
+<!--            overflow: hidden;-->
+<!--            display: flex;-->
+<!--            min-width: 100%;-->
+<!--            background: black;-->
+<!--        }-->
+<!--        .chat {-->
+<!--            scroll-behavior: smooth;-->
+<!--            height: 80vh;-->
+<!--            overflow: hidden;-->
+<!--            overflow-y: scroll;-->
+<!--        }-->
+
+<!--        .side-bar{-->
+<!--            min-height: 100vh;-->
+<!--            overflow: hidden;-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            flex-direction: column;-->
+<!--            justify-content: space-between;-->
+<!--            background: #202123;-->
+<!--            min-width: 13%;-->
+<!--        }-->
+<!--        .chat-bar{-->
+<!--            min-height: 100vh;-->
+<!--            overflow: hidden;-->
+<!--            justify-content: space-between;-->
+<!--            display: flex;-->
+<!--            flex-direction: column;-->
+<!--            width: 87%;-->
+<!--            background: #343541;-->
+<!--        }-->
+<!--        .post{-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            justify-content: left;-->
+<!--            padding: 10px 200px;-->
+<!--            height: auto;-->
+<!--            background: #343541;-->
+<!--        }-->
+
+
+<!--        .ai{-->
+<!--            background: #444654 !important;-->
+<!--        }-->
+
+<!--        .post-avatar{-->
+<!--            margin: 15px;-->
+<!--            width: 40px;-->
+<!--            height: 40px;-->
+<!--        }-->
+<!--        .post-avatar img{-->
+<!--            border-radius: 2px;-->
+<!--            width: 35px;-->
+<!--            height: 35px;-->
+<!--        }-->
+<!--        .post-text{-->
+<!--            line-height: 25px;-->
+<!--            font-family: sans-serif;-->
+<!--        }-->
+
+<!--        .form{-->
+<!--            height: 150px;-->
+<!--            position: sticky;-->
+<!--            color: #444654;-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            justify-content: center;-->
+<!--        }-->
+
+<!--        .in-cont{-->
+<!--            width: 50%;-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            justify-content: space-between;-->
+<!--        }-->
+
+<!--        .form i {-->
+<!--            border-radius: 5px;-->
+<!--            padding: 15px;-->
+<!--            position: relative;-->
+<!--            right: 0;-->
+<!--        }-->
+<!--        .form i:hover{-->
+<!--            background: #202123;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+<!--        .input{-->
+<!--            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);-->
+<!--            padding: 20px;-->
+<!--            color: white;-->
+<!--            font-size: 15px;-->
+<!--            border-radius: 5px;-->
+<!--            width: 100%;-->
+<!--            height: 50px;-->
+<!--            outline: none;-->
+<!--            border: none;-->
+<!--            background:#40414f;-->
+<!--        }-->
+<!--        .chats{-->
+<!--            width: 100%;-->
+<!--            height: auto;-->
+<!--            padding: 10px;-->
+<!--        }-->
+
+<!--        .add-new{-->
+<!--            border-radius: 5px;-->
+<!--            border: 1px solid #444654;-->
+<!--            height: 45px;-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            justify-content: left;-->
+<!--            transition: .2s;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+<!--        .add-new:hover{-->
+<!--            background: #2a2b2f;-->
+<!--        }-->
+
+<!--        .add-new i ,.chat-button i {-->
+<!--            font-weight: bold;-->
+<!--            margin: 15px;-->
+<!--        }-->
+
+<!--        .chat-button{-->
+<!--            margin: 10px 0;-->
+<!--            border-radius: 5px;-->
+<!--            height: 45px;-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            justify-content: left;-->
+<!--            transition: .2s;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+<!--        .chat-button:hover{-->
+<!--            background: #2a2b32;-->
+<!--        }-->
+<!--        .side-buttons{-->
+<!--            width: 95%;-->
+<!--            height: auto;-->
+<!--            border-top: 1px #4d4d4f solid;-->
+<!--        }-->
+<!--        .s-b{-->
+<!--            margin: 5px 0;-->
+<!--            border-radius: 5px;-->
+<!--            height: 45px;-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            justify-content: left;-->
+<!--            transition: .2s;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+<!--        .s-b:hover{-->
+<!--            background: #2b2c2f;-->
+<!--        }-->
+
+<!--        .s-b i {-->
+<!--            margin: 15px;-->
+<!--        }-->
+<!--        .active{-->
+<!--            background: #343541;-->
+<!--        }-->
+
+
+<!--        .swal2-popup{-->
+<!--            color: white !important;-->
+<!--            background: #444654 !important;-->
+<!--        }-->
+
+<!--        .swal2-confirm{-->
+<!--            width: 150px;-->
+<!--            border: none !important;-->
+<!--            outline: none !important;-->
+<!--            background: #202123!important;-->
+<!--            transition: .2s!important;-->
+<!--        }-->
+<!--        .swal2-confirm:hover{-->
+<!--            background: #3b3b3b !important;-->
+<!--        }-->
+
+<!--        @media only screen and (max-width: 1100px){-->
+<!--            .side-bar{-->
+<!--                display: none;-->
+<!--            }-->
+<!--            .chat-bar{-->
+<!--                width: 100%;-->
+<!--            }-->
+<!--        }-->
+
+<!--        ::-webkit-scrollbar{-->
+<!--            width: 10px;-->
+<!--        }-->
+
+<!--        ::-webkit-scrollbar-track{-->
+<!--            background: #343541;-->
+
+<!--        }-->
+<!--        ::-webkit-scrollbar-thumb{-->
+<!--            border-radius: 5px;-->
+<!--            background: #202123;-->
+<!--        }-->
+
+<!--    </style>-->
+
+</head>
+<body>
+    <div class="container">
+
+        <!--==================-->
+        <div class="side-bar">
+            <div class="chats">
+                <div class="alertclick add-new"><i>+</i> New chat</div>
+                <div class="alertclick chat-button active"><i class="fa-regular fa-message"></i><div class="chat-text"></div></div>
+                <div class="alertclick chat-button"><i class="fa-regular fa-message"></i><div class="chat-text">meowGPT chat 2</div></div>
+                <div class="alertclick chat-button"><i class="fa-regular fa-message"></i><div class="chat-text">meowGPT chat 3</div></div>
+                <div class="alertclick chat-button"><i class="fa-regular fa-message"></i><div class="chat-text">meowGPT chat 4</div></div>
+                <div class="alertclick chat-button"><i class="fa-regular fa-message"></i><div class="chat-text">meowGPT chat 5</div></div>
+            </div>
+
+            <div class="side-buttons">
+                <div class="alertclick s-b"><i class="fa-regular fa-trash-can"></i> Clear conversation</div>
+                <div class="alertclick s-b"><i class="fa-solid fa-moon"></i> Dark mode</div>
+                <div class="alertclick s-b"><i class="fa-sharp fa-regular fa-pen-to-square"></i> Upgrades & FAQ</div>
+                <div class="alertclick s-b"><i class="fa-sharp fa-solid fa-right-from-bracket"></i> Log out</div>
+            </div>
+        </div>
+
+        <!--==================-->
+        <div class="chat-bar">
+            <div class="chat">
+
+            </div>
+            <div class="form">
+                <div class="in-cont">
+                    <input class="input" placeholder="Send a message...">
+                    <i class="fa-regular fa-paper-plane"></i>
+
+                </div>
+            </div>
+        </div>
+
+        <!--==================-->
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+
+<!--<script>-->
+<!--    const input = document.querySelector('.input');-->
+<!--    const submit = document.querySelector('.in-cont i');-->
+<!--    const chat = document.querySelector('.chat');-->
+<!--    const chatText = document.querySelectorAll('.chat-text ');-->
+
+<!--    let postNum = 0;-->
+
+
+<!--    function alertDumb(){-->
+<!--        Swal.fire({-->
+<!--            icon: 'error',-->
+<!--            title: 'Oops...',-->
+<!--            text: 'Your so dumb IQ 21',-->
+<!--        })-->
+<!--    }-->
+
+<!--    addEventListener('click' , function (e){if (e.target.classList.contains('alertclick')){alertDumb()}})-->
+
+
+
+<!--    function chatButtonText(){-->
+<!--        if (input.value !== '') {-->
+<!--            if (postNum === 1) {-->
+<!--                chatText[0].innerText = input.value-->
+<!--            }-->
+<!--        }else{-->
+<!--            chatText[0].innerText = 'meowGPT chat 1'-->
+<!--        }-->
+
+<!--    }-->
+
+<!--    chatButtonText()-->
+
+<!--    let postable = 1-->
+
+<!--    function posta(){-->
+<!--        if (postable === 1){-->
+<!--            if (input.value !== '') {-->
+<!--                postNum++-->
+<!--                x = input.value-->
+<!--                chatButtonText()-->
+<!--                input.value = '';-->
+<!--                subPost(x);-->
+<!--                setTimeout(function () {-->
+<!--                    aiPost()-->
+<!--                }, 700)-->
+<!--                postable = 0-->
+<!--            }-->
+<!--        }-->
+<!--    }-->
+
+
+<!--    submit.onclick = function (){-->
+<!--        posta()-->
+<!--    }-->
+
+
+<!--    input.addEventListener('keydown' , function (e){-->
+
+<!--        if (e.key === 'Enter'){-->
+<!--            posta()-->
+<!--        }-->
+<!--    })-->
+
+
+
+<!--    //<div class="  post">  0000  <div class="post-avatar"> <img src="imgs/c.jpg"></div>  00000  <div class="post-text">asd</div> 00000 </div>-->
+
+<!--    function subPost(e){-->
+<!--        post = document.createElement('div');-->
+<!--        postA = document.createElement('div');-->
+<!--        postT = document.createElement('div');-->
+<!--        postI = document.createElement('img');-->
+
+<!--        post.classList.add('post');-->
+<!--        postA.classList.add('post-avatar');-->
+<!--        postT.classList.add('post-text');-->
+<!--        postI.setAttribute('imgs/f.jpg');-->
+
+<!--        chat.appendChild(post);-->
+<!--        post.appendChild(postA);-->
+<!--        post.appendChild(postT);-->
+<!--        postA.appendChild(postI);-->
+<!--        postT.innerHTML = e-->
+
+<!--        postable = 0-->
+<!--    }-->
+
+<!--    function aiPost(){-->
+<!--        post = document.createElement('div');-->
+<!--        postA = document.createElement('div');-->
+<!--        postT = document.createElement('div');-->
+<!--        postI = document.createElement('img');-->
+
+<!--        post.classList.add('post');-->
+<!--        post.classList.add('ai');-->
+<!--        postA.classList.add('post-avatar');-->
+<!--        postT.classList.add('post-text');-->
+<!--        postI.setAttribute('img/meowGPT-logo.png');-->
+
+<!--        chat.appendChild(post);-->
+<!--        post.appendChild(postA);-->
+<!--        post.appendChild(postT);-->
+<!--        postA.appendChild(postI);-->
+
+<!--        const meowS = document.createTextNode('Meow');-->
+<!--        const meowN = document.createTextNode(' meow');-->
+<!--        const meowD = document.createTextNode('. Meow');-->
+<!--        const meowC = document.createTextNode(', meow');-->
+<!--        const meowE = document.createTextNode(' meow.')-->
+
+<!--        chat.scrollTo(0, chat.scrollHeight);-->
+
+<!--        y = (Math.floor(Math.random() * 30) + 1 ) * 2 ;-->
+
+<!--        console.log(y);-->
+<!--        console.log(postT);-->
+<!--        console.log(meowN);-->
+<!--        meowN.nodeValue = `${meowN.nodeValue} meow`;-->
+<!--        console.log(meowN)-->
+<!--        postT.appendChild(meowS);-->
+<!--        for (let i = 0; i < y ; i++){-->
+<!--            yy = (Math.floor(Math.random() * 11))-->
+<!--            meowN.nodeValue = `${meowN.nodeValue} meow`;-->
+<!--            postT.appendChild(meowN);-->
+
+
+<!--        }-->
+<!--        postT.appendChild(meowE);-->
+
+
+
+<!--        postable = 1-->
+
+<!--    }-->
+
+
+
+<!--</script>-->
+
+</body>
+</html>

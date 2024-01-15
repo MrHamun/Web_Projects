@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    border: 1px ;
+    box-sizing: border-box;
+}
+body{
+    background-image: linear-gradient(45deg,#000, #FFF,#000,#FFF,#000,#FFF,#000,#FFF,#000,#FFF);
+    background-size: 600%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    animation: body 20s infinite alternate;
+}
+
+@keyframes body {
+    0%{
+        background-position: left;
+    }
+    100%{
+        background-position: right;
+    }
+}
+
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 70%;
+    background: #929292;
+    box-shadow: 0 0 40px #000;
+}
+.form{
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.first{
+    margin-left: 30px;
+}
+.num{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    border-radius: 20px;
+    min-width: 20%;
+    height: 50px;
+}
+
+form{
+    gap: 20px;
+    font-size: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button{
+    background-image: linear-gradient(45deg,#6ebfff,#6ebfff,#1973bb,#1973bb);
+    min-width: 10%;
+    height: 50px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    transition: 1s ;
+    background-size: 500%;
+    background-position: left;
+
+
+}.button:hover{
+     background-position:right;
+ }
+
+.name{
+
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}

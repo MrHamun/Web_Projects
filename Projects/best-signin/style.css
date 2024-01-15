@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+*{
+    color: white;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Comfortaa', cursive;
+}
+
+.container{
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("imgs/wb6.jpg");
+    background-size: cover;
+}
+
+.sign-cont{
+    background: rgba(255, 255, 255, 0);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
+    border: 1px solid rgba(255, 255, 255, 0.29);
+    height: 480px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 2;
+    font-size: 35px;
+}
+
+.form{
+    flex: 2;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form input{
+    background: rgba(255, 255, 255, 0);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.8px);
+    -webkit-backdrop-filter: blur(7.8px);
+    border: 1px solid rgba(255, 255, 255, 0.29);
+    width: 75%;
+    height: 40px;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+}
+.form input:focus{
+    outline: none;
+}
+
+::placeholder{
+    color: white;
+}
+.text-cont{
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    font-size: 12px;
+    gap: 20px;
+}
+.forgot{
+    cursor: pointer;
+    color: #ff8d76;
+    transition: .2s ease-in-out;
+}
+.forgot:hover{
+    color: #bd6a59;
+}
+
+.button-cont {
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button-cont button{
+    width: 75%;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    color: black;
+    transition: .3s ease-in-out;
+}
+.button-cont button:hover{
+    background: #8f8f8f;
+    transform: scale(1.05);
+}
+.button-cont button:focus{
+    outline: none;
+    background: #8f8f8f;
+}
+
+
+.text{
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+}
+.text span{
+    cursor: pointer;
+    color: #ff8d76;
+    transition: .2s ease-in-out;
+}
+.text span:hover{
+    color: #bd6a59;
+}
